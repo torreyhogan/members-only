@@ -1,0 +1,20 @@
+<h1>Listing articles</h1>
+
+<table>
+	<tr>
+		<% if logged_in? %>
+			<th>Author</th>
+		<% end %>
+		<th>Created</th>
+		<th>Content</th>
+	</tr>
+	<% @posts.each do |post| %>
+		<tr>
+			<% if logged_in? %>
+				<th><%= post.user.username %></th>
+			<% end %>
+			<th><%= post.created_at.strftime('%m/%d/%Y, %H:%M') %></th>
+			<th><%= post.content %></th>
+		</tr>
+	<% end %>
+</table>

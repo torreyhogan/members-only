@@ -1,0 +1,5 @@
+<% if logged_in? %>
+	<h3>Author: <%= @post.user.username %></h3>
+<% end %>
+<h3>Content: <%= @post.content %></h3>
+<h3>Created at: <%= @post.created_at.strftime('%m/%d/%Y, %H:%M') %></h3>

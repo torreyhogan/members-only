@@ -1,0 +1,7 @@
+<li>
+<% if logged_in? %>
+	<span>Author: <%= link_to post.user.username, post.user %></span>
+<% end %>
+<span>Content: <%= post.content %>   </span>
+<span>Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+</li>

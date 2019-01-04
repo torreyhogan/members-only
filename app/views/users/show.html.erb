@@ -4,4 +4,13 @@
 		Username: <%= @user.username %>  <br>
 		Email: <%= @user.email %>
 	</h1>
+	<div>
+		<% if @user.posts.any? %>
+			<h3>Posts (<%= @user.posts.count %>)</h3>
+			<ol>
+				<%= render @posts %>
+			</ol>
+			
+		<% end %>
+	</div>
 </div>
