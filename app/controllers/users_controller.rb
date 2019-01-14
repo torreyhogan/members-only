@@ -18,6 +18,29 @@ class UsersController < ApplicationController
   	end
   end
 
+  def index
+    if logged_in?
+      @users = User.all
+      render 'index'
+    else
+      redirect_to signup_path
+    end
+  end
+
+   def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers 
+    render 'show_follow'
+  end
+
 
 
 

@@ -1,0 +1,13 @@
+<div>
+	<h1>
+		<% provide(:title, "Users") %>
+	</h1>
+	<section>
+		<%= render 'shared/stats' %>
+	</section>
+		<% @users.each do | user | %>
+			<% @user = user %>
+			<%= @user.username %>
+			<%= render 'follow_form' %><br>
+		<% end %>
+</div>

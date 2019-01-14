@@ -4,7 +4,11 @@
 		Username: <%= @user.username %>  <br>
 		Email: <%= @user.email %>
 	</h1>
+	<section>
+		<%= render 'shared/stats' %>
+	</section>
 	<div>
+		<%= render 'follow_form' if logged_in? %>
 		<% if @user.posts.any? %>
 			<h3>Posts (<%= @user.posts.count %>)</h3>
 			<ol>
